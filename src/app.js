@@ -1,18 +1,21 @@
+//src/app.js
+
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
 const mysql = require("mysql");
 const myConnection = require("express-myconnection");
+
 const app = express();
-//imports routes
+
+//Importar rutas
 const customerRoutes = require("./routes/customer");
+const authRoutes = require("./routes/auth");
 
-//settings
+//Configuraciones
 app.set("port", process.env.PORT || 3000);
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
 
-//middlewares
+//Middlewares
 app.use(morgan("dev"));
 app.use(
   myConnection(
@@ -28,13 +31,18 @@ app.use(
   )
 );
 
-//routes
-app.use("/", customerRoutes);
+//Formulario JSON
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-//static files
+//Rutas
+app.use("/customer", customerRoutes); // Rutas para clientes (prueba)
+app.use("/auth", authRoutes); // Rutas para autenticación
+
+//Archivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
 
-// server
+//Iniciar el servidor
 app.listen(app.get("port"), () => {
-  console.log("Server on port 3000");
+  console.log("Server on port", app.get("port"));
 });
