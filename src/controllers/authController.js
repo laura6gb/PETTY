@@ -2,12 +2,13 @@
 const controller = {};
 
 //Registro de usuario
-controller.signup = (req, res) => {
-  const { email, password } = req.body;
+controller.signin = (req, res) => {
+  const { nombre, email, password } = req.body;
   req.getConnection((err, conn) => {
     if (err) return res.status(500).json(err);
-    const query = "INSERT INTO usuario (email, password) VALUES (?, ?)";
-    conn.query(query, [email, password], (err, result) => {
+    const query =
+      "INSERT INTO usuario (nombre, email, password) VALUES (?, ?, ?)";
+    conn.query(query, [nombre, email, password], (err, result) => {
       if (err) {
         return res.status(500).json(err);
       }
@@ -16,7 +17,7 @@ controller.signup = (req, res) => {
   });
 };
 
-//Login de usuario
+//Inicio de sesión de usuario
 controller.login = (req, res) => {
   const { email, password } = req.body;
   req.getConnection((err, conn) => {
