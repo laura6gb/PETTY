@@ -32,58 +32,66 @@ const Signin: React.FC = () => {
         {
           //Bloque 2, con formulario y demás contenido
         }
-        <h1>Registro</h1>
-        <form onSubmit={handleSubmit} className="signin-form">
-          <div className="formr">
-            <div className="input-boxr">
-              {
-                //Input para nombre
-                //Campo obligatorio
-              }
-              <label>Nombre</label>
-              <input
-                type="text"
-                placeholder="Ingresar nombre completo"
-                value={nombre}
-                onChange={(e) => setNombre(e.target.value)}
-                required
-              />
-            </div>
-            <div className="input-boxr">
-              {
-                //Input para email
-                //Campo obligatorio
-              }
-              <label>Email</label>
-              <input
-                type="email"
-                placeholder="Ingresar correo electrónico"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="input-boxr">
-              {
-                //Input para contraseña
-                //Campo obligatorio
-              }
-              <label>Password</label>
-              <input
-                type="password"
-                placeholder="Ingresar contraseña"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <button type="submit" className="uno" disabled={loading}>
+        <form onSubmit={handleSubmit} className="formr">
+          <h1>Registro</h1>
+          <div className="input-boxr">
+            {
+              //Input para nombre
+              //Campo obligatorio
+            }
+            <label>Nombre completo:</label>
+            <input
+              type="text"
+              placeholder="Ingresar nombre completo"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-boxr">
+            {
+              //Input para email
+              //Campo obligatorio
+            }
+            <label>Correo electrónico:</label>
+            <input
+              type="email"
+              placeholder="Ingresar correo electrónico"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-boxr">
+            {
+              //Input para contraseña
+              //Campo obligatorio
+            }
+            <label>Crear contraseña:</label>
+            <input
+              type="password"
+              placeholder="Ingresar contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="login-link">
+            {
+              //Redireccionamiento a página de registro de usuario
+            }
+            <p>
+              ¿Ya tiene una cuenta? <Link to="/LogIn">Iniciar sesión</Link>
+            </p>
+          </div>
+          <div className="boton">
+            <button type="submit" className="unor" disabled={loading}>
               {
                 //Boton para enviar formulario e información de nuevo usuario
               }
               {loading ? "Cargando..." : "Crear"}
             </button>
-            <button type="reset" className="dos">
+            <button type="reset" className="dosr">
               Cancelar
             </button>
           </div>

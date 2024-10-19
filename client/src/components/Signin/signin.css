@@ -15,14 +15,12 @@
   flex: 1;
   display: flex;
   width: 50%;
-  height: 100vh;
+  padding: 3%;
   color: black;
-  flex-direction: column;
 }
 
 .wrapperr .formr {
   width: 100%;
-  height: 100vh;
 }
 
 .logor {
@@ -37,6 +35,7 @@
 img {
   width: 12rem;
   height: 12rem;
+  margin: 0 auto;
 }
 
 /*Atributos a clases y elementos html*/
@@ -53,8 +52,8 @@ img {
 }
 
 .input-boxr input {
-  width: 80%;
-  height: 1.5rem;
+  width: 100%;
+  height: 1rem;
   background: #fffff0;
   border: none;
   outline: none;
@@ -68,12 +67,10 @@ img {
   color: gray;
 }
 
-.input-boxr .icon {
-  position: absolute;
-  right: -2rem;
-  top: 1.5rem;
-  transform: translateY(-50%);
-  font-size: 1.5rem;
+.boton {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .wrapperr button {
@@ -87,6 +84,20 @@ img {
   font-size: 1rem;
   color: black;
   align-items: center;
+}
+
+.wrapperr .login-link {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.login-link p a {
+  color: #ff9a03;
+  text-decoration: none;
+}
+.login-link p a:hover {
+  text-decoration: underline;
 }
 
 .unor {
@@ -158,7 +169,7 @@ img {
     font-size: 0.9rem;
   }
 
-  .register-link {
+  .login-link {
     font-size: 0.9rem;
   }
 }

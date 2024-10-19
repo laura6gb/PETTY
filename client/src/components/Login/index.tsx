@@ -78,19 +78,22 @@ const Login: React.FC = () => {
               //Enlace para recuperar credenciales
             }
           </div>
-          <button type="submit" className="uno" disabled={loading}>
-            {loading ? "Cargando..." : "Ingresar"}
-            {
-              //Boton para enviar formulario e iniciar sesión
-              //Corroborar credenciales
-            }
-          </button>
-          <button type="reset" className="dos">
-            {
-              //Boton para cancelar, resetea todo lo ingresado
-            }
-            Cancelar
-          </button>
+          <div className="boton">
+            <button type="submit" className="uno" disabled={loading}>
+              {loading ? "Cargando..." : "Ingresar"}
+              {
+                //Boton para enviar formulario e iniciar sesión
+                //Corroborar credenciales
+              }
+            </button>
+            <button type="reset" className="dos">
+              {
+                //Boton para cancelar, resetea todo lo ingresado
+              }
+              Cancelar
+            </button>
+          </div>
+
           <div className="register-link">
             {
               //Redireccionamiento a página de registro de usuario
