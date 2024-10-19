@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./login.css"; //Estilos
 import useAuth from "../../hooks/useAuth"; //Hook para la autenticación
+import { Link } from "react-router-dom"; //Rutas
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -24,14 +25,15 @@ const Login: React.FC = () => {
         {
           //Bloque 1, con logo
         }
-        <img src="" />
+        <img src="src\assets\logovert.png" />
       </div>
       <div className="wrapper">
         {
           //Bloque 2, con formulario y demás contenido
         }
-        <h1>Login</h1>
+
         <form onSubmit={handleSubmit} className="forml">
+          <h1>Iniciar sesión</h1>
           {
             //Formulario de inicio de sesion
           }
@@ -40,7 +42,7 @@ const Login: React.FC = () => {
               //Input para email o usuario
               //Campo obligatorio
             }
-            <label>Email</label>
+            <label>Correo electrónico:</label>
             <input
               type="email"
               value={email}
@@ -94,7 +96,7 @@ const Login: React.FC = () => {
               //Redireccionamiento a página de registro de usuario
             }
             <p>
-              ¿No tiene una cuenta? <a>Crear usuario</a>
+              ¿No tiene una cuenta? <Link to="/SignIn">Crear usuario</Link>
             </p>
           </div>
         </form>

@@ -1,0 +1,171 @@
+* {
+  font-family: "Alatsi";
+}
+.Inicio-box {
+  /*Contenedor de interfaz completa*/
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  position: relative;
+}
+
+.header img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 11rem;
+  height: 3rem;
+  margin: 0;
+}
+.welcome {
+  /*Contenedor de texto de bienvenida*/
+  flex: 1;
+  display: flex;
+  width: 50%;
+  height: max-content;
+  align-items: flex-start;
+  text-align: left;
+  flex-direction: column;
+}
+.welcome h1 {
+  font-size: 4rem;
+}
+.welcome h2 {
+  font-size: 1.5rem;
+}
+.welcome-t {
+  padding: 6rem;
+}
+.wrapperx {
+  /*Contenedor de links*/
+  flex: 1;
+  display: flex;
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  background: #ff9a03;
+  color: white;
+  padding: 2rem 0;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.wrapperx h1 {
+  margin-bottom: 2rem;
+}
+.wrapper .access-box {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+button {
+  background-color: #d9d9d9;
+  border: none;
+  color: black;
+  margin-top: 1rem;
+  height: 1.8rem;
+  width: 8rem;
+  border-radius: 5px;
+  font-family: "Alatsi";
+  cursor: pointer;
+}
+label .titulos {
+  text-align: center;
+  align-items: center;
+}
+
+.login-button,
+.signin-button {
+  background-color: #fffff0;
+  color: black;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding: 10%;
+  margin-bottom: 3rem;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .Inicio-box {
+    /* Cambia formato de pantalla horizontal a vertical */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header {
+    /* Ajustar tamaño del header para móviles */
+    height: 10%;
+  }
+
+  .header img {
+    /* Ajustar el tamaño del logo */
+    width: 8rem;
+    height: auto;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .header .menu {
+    /* Reducir tamaño del menú */
+    font-size: 1.2rem;
+    margin: 0.5rem;
+  }
+
+  .welcome {
+    /* Cambiar layout y tamaño del texto de bienvenida */
+    width: 100%;
+    height: auto;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .welcome h1 {
+    /* Ajustar tamaño del texto */
+    font-size: 2.5rem;
+  }
+
+  .welcome h2 {
+    /* Ajustar tamaño del subtítulo */
+    font-size: 1.2rem;
+  }
+
+  .wrapperx {
+    /* Cambiar tamaño del contenedor de links */
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wrapperx h1 {
+    /* Reducir tamaño del texto */
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .wrapper .access-box {
+    /* Ajustar tamaño de las cajas de acceso */
+    width: 80%;
+    margin: 1rem 0;
+  }
+
+  .login-button,
+  .signin-button {
+    /* Hacer los botones más adaptables */
+    width: 90%;
+    padding: 8%;
+    margin: 3% 0;
+    border-radius: 8px;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./signin.css"; //Estilos
 import useAuth from "../../hooks/useAuth"; // Hook para la autenticación
+import { Link } from "react-router-dom"; //Rutas
 
 const Signin: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -25,9 +26,9 @@ const Signin: React.FC = () => {
         {
           //Bloque 1, con logo
         }
-        <img src="" />
+        <img src="src\assets\logovert.png" />
       </div>
-      <div className="wraperr">
+      <div className="wrapperr">
         {
           //Bloque 2, con formulario y demás contenido
         }
@@ -76,16 +77,16 @@ const Signin: React.FC = () => {
                 required
               />
             </div>
+            <button type="submit" className="uno" disabled={loading}>
+              {
+                //Boton para enviar formulario e información de nuevo usuario
+              }
+              {loading ? "Cargando..." : "Crear"}
+            </button>
+            <button type="reset" className="dos">
+              Cancelar
+            </button>
           </div>
-          <button type="submit" className="uno" disabled={loading}>
-            {
-              //Boton para enviar formulario e información de nuevo usuario
-            }
-            {loading ? "Cargando..." : "Crear"}
-          </button>
-          <button type="reset" className="dos">
-            Cancelar
-          </button>
         </form>
       </div>
       {error && <p className="error-message">{error}</p>}
