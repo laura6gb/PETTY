@@ -30,7 +30,10 @@ controller.login = (req, res) => {
           .status(401)
           .json({ message: "Usuario o contraseña incorrecta" });
       }
-      res.json({ message: "Sesión iniciada exitosamente" });
+      res.json({
+        message: "Sesión iniciada exitosamente",
+        fullname: usuario[0].nombre,
+      });
     });
   });
 };

@@ -1,0 +1,103 @@
+/*Style para Home*/
+* {
+  font-family: "Alatsi";
+}
+.home-box {
+  font-size: 1rem;
+  height: 100vh;
+  width: 100%;
+}
+
+.headerh {
+  width: 100%;
+  margin-top: 1%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.wrapperh {
+  display: flex;
+  width: 100%;
+}
+
+.welcomeh,
+.cards {
+  display: flex;
+  flex: 1;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/*iconos*/
+.icon {
+  display: flex;
+  gap: 20%;
+  margin-right: 5%;
+}
+
+#logo {
+  width: 9rem;
+  height: 2rem;
+  margin-bottom: 1%;
+}
+
+#search,
+#config,
+#pet,
+#home {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.bienvenida {
+  margin: 0 auto;
+  margin: auto 0;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.cards {
+  flex-direction: column;
+  padding: 2%;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #ff9a03;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+
+  text-align: left;
+  padding: 5%;
+  margin: 1%;
+}
+
+.iconlist {
+  opacity: 70%;
+  font-size: 2rem;
+  float: right;
+  margin: 1rem;
+}
+
+.botoncard {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  padding-left: 10px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.titulos {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}

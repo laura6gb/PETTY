@@ -1,47 +1,50 @@
 import React, { useState } from "react";
-import "./login.css"; //Estilos
-import useAuth from "../../hooks/useAuth"; //Hook para la autenticación
-import { Link } from "react-router-dom"; //Rutas
+import "./login.css"; // Estilos
+import useAuth from "../../hooks/useAuth"; // Hook para la autenticación
+import { Link, useNavigate } from "react-router-dom"; // Rutas
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login, loading, error } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await login(email, password);
-    if (response) {
-      alert(response.message);
+    try {
+      const response = await fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Almacenar el nombre completo del usuario en localStorage
+        localStorage.setItem("fullname", data.fullname);
+        alert(data.message);
+        // Redirigir al usuario a la página de inicio
+        navigate("/home");
+      } else {
+        alert(data.message); // Mostrar mensaje de error
+      }
+    } catch (error) {
+      alert("Error en la conexión con el servidor");
     }
   };
 
   return (
     <div className="login-box">
-      {
-        //Contenedor interfaz completa
-      }
       <div className="logo">
-        {
-          //Bloque 1, con logo
-        }
-        <img src="src\assets\logovert.png" />
+        <img src="src/assets/logovert.png" />
       </div>
       <div className="wrapper">
-        {
-          //Bloque 2, con formulario y demás contenido
-        }
-
         <form onSubmit={handleSubmit} className="forml">
           <h1>Iniciar sesión</h1>
-          {
-            //Formulario de inicio de sesion
-          }
           <div className="input-box">
-            {
-              //Input para email o usuario
-              //Campo obligatorio
-            }
             <label>Correo electrónico:</label>
             <input
               type="email"
@@ -52,10 +55,6 @@ const Login: React.FC = () => {
             />
           </div>
           <div className="input-box">
-            {
-              //Input para contraseña
-              //Campo obligatorio
-            }
             <label>Contraseña:</label>
             <input
               type="password"
@@ -66,38 +65,21 @@ const Login: React.FC = () => {
             />
           </div>
           <div className="remember-forgot">
-            {
-              //Checkbox para almacenar usuario y contraseña
-            }
             <label>
               <input type="checkbox" />
               Recordar mi usuario
             </label>
             <a href="#">Olvidé mi contraseña</a>
-            {
-              //Enlace para recuperar credenciales
-            }
           </div>
           <div className="boton">
             <button type="submit" className="uno" disabled={loading}>
               {loading ? "Cargando..." : "Ingresar"}
-              {
-                //Boton para enviar formulario e iniciar sesión
-                //Corroborar credenciales
-              }
             </button>
             <button type="reset" className="dos">
-              {
-                //Boton para cancelar, resetea todo lo ingresado
-              }
               Cancelar
             </button>
           </div>
-
           <div className="register-link">
-            {
-              //Redireccionamiento a página de registro de usuario
-            }
             <p>
               ¿No tiene una cuenta? <Link to="/SignIn">Crear usuario</Link>
             </p>
