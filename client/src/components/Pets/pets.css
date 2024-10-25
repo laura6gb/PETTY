@@ -11,6 +11,7 @@
 .wrapperp {
   display: flex;
   width: 100%;
+  flex-direction: column;
 }
 
 .headerp {
@@ -21,15 +22,34 @@
   border-bottom: 1px solid black;
 }
 
-.addpet {
-  display: flex;
-  flex: 1;
-  width: 50%;
-  height: 90%;
-  margin: 0 auto;
-  padding: 2rem;
+.tp {
+  margin: 1rem;
+}
+
+.listapets table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
   text-align: left;
-  flex-direction: column;
+}
+
+.listapets th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+th {
+  background-color: #d9d9d9;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
 }
 
 .wrapperp .formp {
@@ -55,67 +75,6 @@
 #home {
   font-size: 1.5rem;
   color: black;
-}
-
-.wrapperp .input-boxp {
-  position: relative;
-  width: 100%;
-  margin: 1rem 0;
-}
-
-.input-boxp input,
-select {
-  width: 100%;
-  height: 1rem;
-  background: #d9d9d9;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  color: black;
-  font-size: 1rem;
-  padding: 1.5rem;
-  flex-direction: column;
-}
-
-.input-boxp ::placeholder {
-  color: gray;
-}
-
-.boton {
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.wrapperp button {
-  width: 8em;
-  margin-left: 1rem;
-  height: 2.5rem;
-  border: none;
-  outline: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  color: black;
-  align-items: center;
-}
-
-textarea {
-  background-color: #d9d9d9;
-  border-color: transparent;
-  font-family: "Alatsi";
-  border-radius: 10px;
-}
-::placeholder {
-  padding-left: 0.5rem;
-  font-size: 1rem;
-}
-
-button.uno {
-  background-color: #ff9a03;
-}
-button.dos {
-  background-color: #d9d9d9;
 }
 
 .titulos {

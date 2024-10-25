@@ -1,10 +1,27 @@
-//import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./pets.css"; //Estilos
 import { Link } from "react-router-dom"; //Rutas
 import { GoHome, GoSearch, GoGear } from "react-icons/go";
 import { PiPawPrint } from "react-icons/pi";
 
 const Pets: React.FC = () => {
+  const [mascotas, setMascotas] = useState([]);
+
+  useEffect(() => {
+    // Hacer la solicitud al backend cuando el componente se monta
+    const fetchMascotas = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/pet/allpets"); // URL de tu backend
+        const data = await response.json();
+        setMascotas(data); // Guardar las mascotas en el estado
+      } catch (error) {
+        console.error("Error al obtener las mascotas:", error);
+      }
+    };
+
+    fetchMascotas();
+  }, []); // El array vacío asegura que la solicitud solo se haga una vez, al montar el componente
+
   return (
     <div className="pets-box">
       <div className="headerp">
@@ -25,97 +42,34 @@ const Pets: React.FC = () => {
         </div>
       </div>
       <div className="wrapperp">
-        <div className="addpet">
-          <form className="formp">
-            <h1>Nueva mascota</h1>
-            <div className="input-boxp">
-              <label className="titulos">Nombre:</label>
-
-              <input
-                type="text"
-                id="nombremasc"
-                name="nombremasc"
-                placeholder="Ingresar el nombre de la mascota"
-              />
-            </div>
-            <div className="input-boxp">
-              <label className="titulos">Edad:</label>
-
-              <input
-                type="number"
-                id="edad"
-                name="edad"
-                placeholder="Ingresar edad"
-              />
-            </div>
-            <div className="input-boxp">
-              <label className="titulos">Especie:</label>
-
-              <select id="especie" name="especie">
-                <option value="defecto">Seleccione una especie</option>
-                <option value="1">Especie 1</option>
-                <option value="2">Especie 2</option>
-                <option value="3">Especie 3</option>
-              </select>
-            </div>
-            <div className="input-boxp">
-              <label className="titulos">Raza:</label>
-
-              <select id="raza" name="raza">
-                <option value="defecto">Seleccione una raza</option>
-                <option value="1">Raza 1</option>
-                <option value="2">Raza 2</option>
-                <option value="3">Raza 3</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <div className="addpet">
-          <form className="formp">
-            <div className="input-boxp">
-              <label className="titulos">Nombre del dueño:</label>
-
-              <input
-                type="text"
-                id="dueño"
-                name="dueño"
-                placeholder="Ingresar nombre del dueño"
-              />
-            </div>
-            <div className="input-boxp">
-              <label className="titulos">Número telefónico:</label>
-
-              <input
-                type="tel"
-                id="telefono"
-                name="telefono"
-                placeholder="Ingresar número telefónico"
-              />
-            </div>
-            <div className="input-boxp">
-              <label className="titulos">Síntomas:</label>
-
-              <select id="sintomas" name="sintomas">
-                <option value="defecto">Seleccione los síntomas</option>
-                <option value="1">Síntoma 1</option>
-                <option value="2">Síntoma 2</option>
-                <option value="3">Síntoma 3</option>
-              </select>
-            </div>
-            <div className="botonp">
-              <Link to="/Tratamiento">
-                <button className="uno" type="button">
-                  Agregar
-                </button>
-              </Link>
-              <button className="dos" type="reset">
-                Cancelar
-              </button>
-            </div>
-          </form>
-        </div>
+        <h1 className="tp">Lista de Mascotas</h1>
+        <table className="listapets">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Especie</th>
+              <th>Raza</th>
+              <th>Tratamiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mascotas.map((mascota: any) => (
+              <tr key={mascota.id}>
+                <td>{mascota.idmascota}</td>
+                <td>{mascota.nombre}</td>
+                <td>{mascota.edad}</td>
+                <td>{mascota.especie}</td>
+                <td>{mascota.raza}</td>
+                <td>{mascota.tratamiento}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 };
+
 export default Pets;
