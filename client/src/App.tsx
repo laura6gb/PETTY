@@ -5,6 +5,7 @@ import Signin from "./components/Signin";
 import Inicio from "./components/Inicio";
 import Home from "./components/Home";
 import Pets from "./components/Pets";
+import AddPet from "./components/AddPet";
 import Tratamiento from "./components/Tratamiento";
 import Database from "./components/Database";
 
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/signin" element={<Signin />} />
         <Route path="/home" element={<Home />} />
         <Route path="/pets" element={<Pets />} />
+        <Route path="/addpet" element={<AddPet />} />
         <Route path="/tratamiento" element={<Tratamiento />} />
         <Route path="/database" element={<Database />} />
       </Routes>

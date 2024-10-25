@@ -15,6 +15,7 @@ app.use(cors());
 //Importar rutas
 const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/auth");
+const petRoutes = require("./routes/pet");
 
 //Configuraciones
 app.set("port", process.env.PORT || 3000);
@@ -42,6 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 //Rutas
 app.use("/customer", customerRoutes); // Rutas para clientes (prueba)
 app.use("/auth", authRoutes); // Rutas para autenticación
+app.use("/pet", petRoutes); // Rutas para mascotas
 
 //Archivos estáticos
 app.use(express.static(path.join(__dirname, "public")));

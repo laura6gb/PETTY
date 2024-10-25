@@ -1,0 +1,136 @@
+/*Style para AddPets*/
+* {
+  font-family: "Alatsi";
+}
+.addpet-box {
+  font-size: 1rem;
+  height: 100vh;
+  width: 100%;
+}
+
+.wrappera {
+  display: flex;
+  width: 100%;
+}
+
+.headerp {
+  width: 100%;
+  margin-top: 1%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.addpet {
+  display: flex;
+  flex: 1;
+  width: 40%;
+  height: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  flex-direction: column;
+}
+
+.wrappera .formp {
+  width: 100%;
+  display: flex;
+}
+
+/*iconos*/
+.icon {
+  display: flex;
+  gap: 20%;
+  margin-right: 5%;
+}
+
+#logo {
+  width: 9rem;
+  height: 2rem;
+  margin-bottom: 1%;
+}
+
+#search,
+#config,
+#pet,
+#home {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.wrappera .input-boxa {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.wrappera label {
+  width: 100%;
+  text-align: left;
+}
+
+.input-boxa input,
+.input-boxa select {
+  width: 100%;
+  height: 1rem;
+  background: #d9d9d9;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: black;
+  font-size: 1rem;
+  padding: 1.5rem;
+}
+
+.input-boxa ::placeholder {
+  color: gray;
+}
+
+.boton {
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.wrappera button {
+  width: 8em;
+  margin-left: 1rem;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: black;
+  align-items: center;
+}
+
+textarea {
+  width: 100%;
+  height: 8rem;
+  background: #d9d9d9;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: black;
+  font-size: 1rem;
+  padding: 1.5rem;
+}
+::placeholder {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+button.uno {
+  background-color: #ff9a03;
+}
+button.dos {
+  background-color: #d9d9d9;
+}
+
+.titulos {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
