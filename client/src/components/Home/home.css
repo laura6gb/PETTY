@@ -69,7 +69,6 @@
   border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
-
   text-align: left;
   padding: 5%;
   margin: 1%;
@@ -80,6 +79,7 @@
   font-size: 2rem;
   float: right;
   margin: 1rem;
+  color: black;
 }
 
 .botoncard {

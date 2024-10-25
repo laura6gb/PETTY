@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           <Link to="" id="search">
             <GoSearch />
           </Link>
-          <Link to="" id="pet">
+          <Link to="/Pets" id="pet">
             <PiPawPrint />
           </Link>
           <Link to="" id="config">
@@ -39,30 +39,36 @@ const Home: React.FC = () => {
           <p className="bienvenida">Bienvenido/a {fullname}</p>
         </div>
         <div className="cards">
-          <div className="card">
-            <MdOutlineAddToPhotos className="iconlist" />
-            <button type="button" name="newmascota" className="botoncard">
-              <label className="titulos">Agregar una nueva mascota: </label>
-              Registra por primera vez una mascota
-            </button>
+          <div>
+            <Link to="/Pets" className="card">
+              <MdOutlineAddToPhotos className="iconlist" />
+              <button type="button" name="newmascota" className="botoncard">
+                <label className="titulos">Agregar una nueva mascota: </label>
+                Registra por primera vez una mascota
+              </button>
+            </Link>
           </div>
 
-          <div className="card">
-            <MdFolderOpen className="iconlist" />
-            <button type="button" name="newtratamiento" className="botoncard">
-              <label className="titulos">
-                Registrar un nuevo tratamiento:{" "}
-              </label>
-              Añade un tratamiento realizado en una mascota registrada
-            </button>
+          <div>
+            <Link to="/Tratamiento" className="card">
+              <MdFolderOpen className="iconlist" />
+              <button type="button" name="newtratamiento" className="botoncard">
+                <label className="titulos">
+                  Registrar un nuevo tratamiento:{" "}
+                </label>
+                Añade un tratamiento realizado en una mascota registrada
+              </button>
+            </Link>
           </div>
 
-          <div className="card">
-            <TbDatabaseSearch className="iconlist" />
-            <button type="button" name="basedatos" className="botoncard">
-              <label className="titulos">Base de datos: </label>
-              Accede a la base de datos
-            </button>
+          <div>
+            <Link to="Database" className="card">
+              <TbDatabaseSearch className="iconlist" />
+              <button type="button" name="basedatos" className="botoncard">
+                <label className="titulos">Base de datos: </label>
+                Accede a la base de datos
+              </button>
+            </Link>
           </div>
         </div>
       </div>
