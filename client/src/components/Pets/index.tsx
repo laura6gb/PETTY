@@ -29,7 +29,7 @@ const Pets: React.FC = () => {
           <form className="formp">
             <h1>Nueva mascota</h1>
             <div className="input-boxp">
-              <label className="">Nombre:</label>
+              <label className="titulos">Nombre:</label>
 
               <input
                 type="text"
@@ -39,7 +39,7 @@ const Pets: React.FC = () => {
               />
             </div>
             <div className="input-boxp">
-              <label className="">Edad:</label>
+              <label className="titulos">Edad:</label>
 
               <input
                 type="number"
@@ -49,7 +49,7 @@ const Pets: React.FC = () => {
               />
             </div>
             <div className="input-boxp">
-              <label className="">Especie:</label>
+              <label className="titulos">Especie:</label>
 
               <select id="especie" name="especie">
                 <option value="defecto">Seleccione una especie</option>
@@ -59,7 +59,7 @@ const Pets: React.FC = () => {
               </select>
             </div>
             <div className="input-boxp">
-              <label className="">Raza:</label>
+              <label className="titulos">Raza:</label>
 
               <select id="raza" name="raza">
                 <option value="defecto">Seleccione una raza</option>
@@ -70,10 +70,10 @@ const Pets: React.FC = () => {
             </div>
           </form>
         </div>
-        <div className="addpet2">
+        <div className="addpet">
           <form className="formp">
             <div className="input-boxp">
-              <label className="">Nombre del dueño:</label>
+              <label className="titulos">Nombre del dueño:</label>
 
               <input
                 type="text"
@@ -83,7 +83,7 @@ const Pets: React.FC = () => {
               />
             </div>
             <div className="input-boxp">
-              <label className="">Número telefónico:</label>
+              <label className="titulos">Número telefónico:</label>
 
               <input
                 type="tel"
@@ -93,7 +93,7 @@ const Pets: React.FC = () => {
               />
             </div>
             <div className="input-boxp">
-              <label className="">Síntomas:</label>
+              <label className="titulos">Síntomas:</label>
 
               <select id="sintomas" name="sintomas">
                 <option value="defecto">Seleccione los síntomas</option>

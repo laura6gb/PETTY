@@ -62,7 +62,7 @@ const Home: React.FC = () => {
           </div>
 
           <div>
-            <Link to="Database" className="card">
+            <Link to="/Database" className="card">
               <TbDatabaseSearch className="iconlist" />
               <button type="button" name="basedatos" className="botoncard">
                 <label className="titulos">Base de datos: </label>

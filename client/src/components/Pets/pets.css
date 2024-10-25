@@ -1,4 +1,4 @@
-/*Style para Home*/
+/*Style para Pets*/
 * {
   font-family: "Alatsi";
 }
@@ -22,16 +22,6 @@
 }
 
 .addpet {
-  display: flex;
-  flex: 1;
-  width: 50%;
-  height: 90%;
-  margin: 0 auto;
-  padding: 2rem;
-  flex-direction: column;
-}
-
-.addpet2 {
   display: flex;
   flex: 1;
   width: 50%;
@@ -126,4 +116,10 @@ button.uno {
 }
 button.dos {
   background-color: #d9d9d9;
+}
+
+.titulos {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
 }
