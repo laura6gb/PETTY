@@ -3,24 +3,25 @@ import "./pets.css"; //Estilos
 import { Link } from "react-router-dom"; //Rutas
 import { GoHome, GoSearch, GoGear } from "react-icons/go";
 import { PiPawPrint } from "react-icons/pi";
+import { IoIosAdd } from "react-icons/io";
 
 const Pets: React.FC = () => {
   const [mascotas, setMascotas] = useState([]);
 
   useEffect(() => {
-    // Hacer la solicitud al backend cuando el componente se monta
+    //Hacer la solicitud al backend cuando el componente se muestra
     const fetchMascotas = async () => {
       try {
-        const response = await fetch("http://localhost:3000/pet/allpets"); // URL de tu backend
+        const response = await fetch("http://localhost:3000/pet/allpets");
         const data = await response.json();
-        setMascotas(data); // Guardar las mascotas en el estado
+        setMascotas(data); //Guardar las mascotas en el estado
       } catch (error) {
         console.error("Error al obtener las mascotas:", error);
       }
     };
 
     fetchMascotas();
-  }, []); // El array vacío asegura que la solicitud solo se haga una vez, al montar el componente
+  }, []); //Realizar la solicitud una sola vez
 
   return (
     <div className="pets-box">
@@ -46,7 +47,6 @@ const Pets: React.FC = () => {
         <table className="listapets">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Nombre</th>
               <th>Edad</th>
               <th>Especie</th>
@@ -56,8 +56,7 @@ const Pets: React.FC = () => {
           </thead>
           <tbody>
             {mascotas.map((mascota: any) => (
-              <tr key={mascota.id}>
-                <td>{mascota.idmascota}</td>
+              <tr key={mascota.idmascota}>
                 <td>{mascota.nombre}</td>
                 <td>{mascota.edad}</td>
                 <td>{mascota.especie}</td>
@@ -67,6 +66,14 @@ const Pets: React.FC = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div>
+        <Link to="/AddPet" className="botonadd">
+          <IoIosAdd className="add" />
+          <button className="dirigir">
+            <label>Agregar mascota</label>
+          </button>
+        </Link>
       </div>
     </div>
   );

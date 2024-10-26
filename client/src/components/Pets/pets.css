@@ -82,3 +82,31 @@ tr:hover {
   font-weight: bold;
   text-align: center;
 }
+
+.botonadd {
+  display: flex;
+  background-color: #ff9a03;
+  width: 20%;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+.add {
+  font-size: 3rem;
+  color: white;
+  margin-left: 5%;
+}
+
+.dirigir {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 100%;
+}
