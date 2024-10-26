@@ -1,4 +1,4 @@
-// src/controllers/mascotaController.js
+// src/controllers/petController.js
 const controller = {};
 
 controller.addPet = (req, res) => {
