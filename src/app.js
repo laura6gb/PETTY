@@ -16,6 +16,7 @@ app.use(cors());
 const customerRoutes = require("./routes/customer");
 const authRoutes = require("./routes/auth");
 const petRoutes = require("./routes/pet");
+const treatmentRoutes = require("./routes/treatment");
 
 //Configuraciones
 app.set("port", process.env.PORT || 3000);
@@ -44,6 +45,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/customer", customerRoutes); // Rutas para clientes (prueba)
 app.use("/auth", authRoutes); // Rutas para autenticación
 app.use("/pet", petRoutes); // Rutas para mascotas
+app.use("/treatment", treatmentRoutes); // Rutas para tratamientos
 
 //Archivos estáticos
 app.use(express.static(path.join(__dirname, "public")));
