@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Pets from "./components/Pets";
 import AddPet from "./components/AddPet";
 import Tratamiento from "./components/Tratamiento";
-import Database from "./components/Database";
+import Fact from "./components/Fact";
 
 const App: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         <Route path="/pets" element={<Pets />} />
         <Route path="/addpet" element={<AddPet />} />
         <Route path="/tratamiento" element={<Tratamiento />} />
-        <Route path="/database" element={<Database />} />
+        <Route path="/fact" element={<Fact />} />
       </Routes>
     </Router>
   );
