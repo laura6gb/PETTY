@@ -10,7 +10,6 @@ const AddPet: React.FC = () => {
   const [edad, setEdad] = useState("");
   const [dueño, setDueño] = useState("");
   const [especie, setEspecie] = useState("");
-  const [tratamiento, setTratamiento] = useState("");
   const [sintomas, setSintomas] = useState("");
 
   const razas = ["Raza 1", "Raza 2", "Raza 3"];
@@ -30,7 +29,7 @@ const AddPet: React.FC = () => {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const data = { nombre, raza, edad, dueño, especie, tratamiento };
+    const data = { nombre, raza, edad, dueño, especie };
 
     try {
       const response = await fetch("http://localhost:3000/pet/addpet", {
@@ -50,7 +49,6 @@ const AddPet: React.FC = () => {
         setEdad("");
         setDueño("");
         setEspecie("");
-        setTratamiento("");
       } else {
         alert("Error: " + result.message);
       }
@@ -116,20 +114,6 @@ const AddPet: React.FC = () => {
                 ))}
               </select>
             </div>
-            <div className="input-boxa">
-              <label className="titulos">Raza:</label>
-
-              <select value={raza} onChange={handleRazaChange} required>
-                <option value="" disabled hidden>
-                  Selecciona una raza
-                </option>
-                {razas.map((raza, index) => (
-                  <option key={index} value={raza}>
-                    {raza}
-                  </option>
-                ))}
-              </select>
-            </div>
           </div>
           <div className="addpet">
             <div className="input-boxa">
@@ -144,14 +128,18 @@ const AddPet: React.FC = () => {
               />
             </div>
             <div className="input-boxa">
-              <label className="titulos">Tratamiento:</label>
+              <label className="titulos">Raza:</label>
 
-              <input
-                type="tel"
-                id="tratamiento"
-                name="tratamiento"
-                placeholder="Ingresar tratamiento"
-              />
+              <select value={raza} onChange={handleRazaChange} required>
+                <option value="" disabled hidden>
+                  Selecciona una raza
+                </option>
+                {razas.map((raza, index) => (
+                  <option key={index} value={raza}>
+                    {raza}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="input-boxa">
               <label className="titulos">Síntomas:</label>

@@ -64,9 +64,9 @@ const Home: React.FC = () => {
           <div>
             <Link to="/Fact" className="card">
               <TbDatabaseSearch className="iconlist" />
-              <button type="button" name="basedatos" className="botoncard">
-                <label className="titulos">Base de datos: </label>
-                Accede a la base de datos
+              <button type="button" name="factura" className="botoncard">
+                <label className="titulos">Factura: </label>
+                Genera facturas a partir de los registros
               </button>
             </Link>
           </div>
