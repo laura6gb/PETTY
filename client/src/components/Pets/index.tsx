@@ -51,7 +51,6 @@ const Pets: React.FC = () => {
               <th>Edad</th>
               <th>Especie</th>
               <th>Raza</th>
-              <th>Tratamiento</th>
             </tr>
           </thead>
           <tbody>
@@ -61,7 +60,6 @@ const Pets: React.FC = () => {
                 <td>{mascota.edad}</td>
                 <td>{mascota.especie}</td>
                 <td>{mascota.raza}</td>
-                <td>{mascota.tratamiento}</td>
               </tr>
             ))}
           </tbody>
