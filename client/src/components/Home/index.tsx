@@ -1,4 +1,3 @@
-//index.tsx
 import React, { useEffect, useState } from "react";
 import "./home.css"; //Estilos
 import { Link } from "react-router-dom"; //Rutas
@@ -11,7 +10,7 @@ const Home: React.FC = () => {
   const [fullname, setFullname] = useState<string | null>(null);
 
   useEffect(() => {
-    // Recuperar el nombre completo desde el localStorage
+    //Recuperar el nombre del usuario
     const storedFullname = localStorage.getItem("fullname");
     setFullname(storedFullname);
   }, []);
@@ -43,8 +42,8 @@ const Home: React.FC = () => {
             <Link to="/Pets" className="card">
               <MdOutlineAddToPhotos className="iconlist" />
               <button type="button" name="newmascota" className="botoncard">
-                <label className="titulos">Agregar una nueva mascota: </label>
-                Registra por primera vez una mascota
+                <label className="titulos">Visualizar mascotas: </label>
+                Accede al registro de mascota y agrega nuevas mascotas
               </button>
             </Link>
           </div>
@@ -53,10 +52,8 @@ const Home: React.FC = () => {
             <Link to="/Tratamiento" className="card">
               <MdFolderOpen className="iconlist" />
               <button type="button" name="newtratamiento" className="botoncard">
-                <label className="titulos">
-                  Registrar un nuevo tratamiento:{" "}
-                </label>
-                Añade un tratamiento realizado en una mascota registrada
+                <label className="titulos">Registrar tratamiento: </label>
+                Añade un tratamiento realizado a una mascota registrada
               </button>
             </Link>
           </div>
@@ -65,7 +62,7 @@ const Home: React.FC = () => {
             <Link to="/Fact" className="card">
               <TbDatabaseSearch className="iconlist" />
               <button type="button" name="factura" className="botoncard">
-                <label className="titulos">Factura: </label>
+                <label className="titulos">Generar factura: </label>
                 Genera facturas a partir de los registros
               </button>
             </Link>

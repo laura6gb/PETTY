@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./login.css"; // Estilos
-import useAuth from "../../hooks/useAuth"; // Hook para la autenticación
-import { Link, useNavigate } from "react-router-dom"; // Rutas
+import "./login.css"; //Estilos
+import useAuth from "../../hooks/useAuth";
+import { Link, useNavigate } from "react-router-dom"; //Rutas
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");

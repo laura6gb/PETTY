@@ -12,6 +12,7 @@ const AddPet: React.FC = () => {
   const [especie, setEspecie] = useState("");
   const [sintomas, setSintomas] = useState("");
 
+  //Opciones de lista desplegable
   const razas = ["Raza 1", "Raza 2", "Raza 3"];
   const especies = ["Especie 1", "Especie 2", "Especie 3"];
 
@@ -30,7 +31,7 @@ const AddPet: React.FC = () => {
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const data = { nombre, raza, edad, dueño, especie };
-
+    //Solicitud a la API
     try {
       const response = await fetch("http://localhost:3000/pet/addpet", {
         method: "POST",

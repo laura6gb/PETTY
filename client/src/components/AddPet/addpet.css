@@ -2,17 +2,21 @@
 * {
   font-family: "Alatsi";
 }
+
+/*Contenedor interfaz completa*/
 .addpet-box {
   font-size: 1rem;
   height: 100vh;
   width: 100%;
 }
 
+/*Contenedor sin encabezado*/
 .wrappera {
   display: flex;
   width: 100%;
 }
 
+/*Encabezado*/
 .headerp {
   width: 100%;
   margin-top: 1%;
@@ -21,6 +25,7 @@
   border-bottom: 1px solid black;
 }
 
+/*Contenedor FORM*/
 .addpet {
   display: flex;
   flex: 1;
